@@ -1,0 +1,5 @@
+C:\Users\Gustavo\Source\BSS_MVC\DATA\bin\Debug\DATA.dll
+C:\Users\Gustavo\Source\BSS_MVC\DATA\bin\Debug\DATA.pdb
+C:\Users\Gustavo\Source\BSS_MVC\DATA\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\Gustavo\Source\BSS_MVC\DATA\obj\Debug\DATA.dll
+C:\Users\Gustavo\Source\BSS_MVC\DATA\obj\Debug\DATA.pdb

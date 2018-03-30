@@ -1,10 +1,7 @@
-﻿using ServiceStack.DataAnnotations;
-
-namespace BSS.Models
+﻿namespace BSS.Models
 {
     public class Proveedor
     {
-        [AutoIncrement]
         public int prov_codigo { get; set; }
 
         public string prov_nombre { get; set; }

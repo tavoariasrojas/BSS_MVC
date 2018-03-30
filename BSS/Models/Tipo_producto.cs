@@ -8,5 +8,4 @@
 
         public string tp_descripcion { get; set; }
     }
-
 }

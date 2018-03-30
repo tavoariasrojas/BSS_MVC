@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSS", "BSS\BSS.csproj", "{DB668310-0EF6-4FB8-8668-E8C494595C67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C18DC5C-3918-4193-BF9E-1E3C4C529BCF} = {3C18DC5C-3918-4193-BF9E-1E3C4C529BCF}
+		{07D0EAB5-39B9-46D5-B53D-1797A97E0B19} = {07D0EAB5-39B9-46D5-B53D-1797A97E0B19}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATA", "DATA\DATA.csproj", "{3C18DC5C-3918-4193-BF9E-1E3C4C529BCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{07D0EAB5-39B9-46D5-B53D-1797A97E0B19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C18DC5C-3918-4193-BF9E-1E3C4C529BCF} = {3C18DC5C-3918-4193-BF9E-1E3C4C529BCF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

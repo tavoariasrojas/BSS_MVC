@@ -9,7 +9,7 @@ namespace DAL.Metodos
 
         public MConnection()
         {
-            _conexion = new OrmLiteConnectionFactory(BD.Default.conexion, SqlServerDialect.Provider);
+            _conexion = new OrmLiteConnectionFactory(BD.Default.Conexion, SqlServerDialect.Provider);
             _db = _conexion.Open();
         }
     }
