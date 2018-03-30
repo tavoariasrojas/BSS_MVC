@@ -1,0 +1,13 @@
+﻿namespace BSS.Models
+{
+    public class Puesto
+    {
+        public int pue_codigo { get; set; }
+
+        public int pue_dep_codigo { get; set; }
+
+        public string pue_descripcion { get; set; }
+
+        public string pue_estado { get; set; }
+    }
+}
