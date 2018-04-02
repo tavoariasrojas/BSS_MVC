@@ -18,6 +18,17 @@ namespace BSS
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Seg_usuario",
+                url: "{controller}/{action}/{id}",
+                defaults: new
+                {
+                    controller = "Seg_usuario",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+                );
         }
     }
 }

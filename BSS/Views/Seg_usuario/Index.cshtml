@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BSS.DATA.Seg_usuario>
+﻿@model IEnumerable<BSS.Models.Seg_usuario>
 
 @{
     ViewBag.Title = "Index";
@@ -65,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.su_usu_insercion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.su_usuario }) |
+            @Html.ActionLink("Details", "Details", new { id = item.su_usuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.su_usuario })
         </td>
     </tr>
 }
