@@ -1,0 +1,82 @@
+﻿@model BSS.Models.Seg_usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Seg_usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.su_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_nombre_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_nombre_completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_fecha_ingreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_fecha_ingreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_contrasena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_contrasena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_dias_vigencia_contrasena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_dias_vigencia_contrasena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_ultimo_cambio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_ultimo_cambio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_usu_insercion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_usu_insercion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

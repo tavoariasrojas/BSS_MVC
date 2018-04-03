@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BSS.Models.Seg_usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.su_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_nombre_completo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_fecha_ingreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_contrasena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_dias_vigencia_contrasena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_ultimo_cambio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.su_usu_insercion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_nombre_completo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_fecha_ingreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_contrasena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_dias_vigencia_contrasena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_ultimo_cambio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.su_usu_insercion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.su_usuario }) |
+            @Html.ActionLink("Details", "Details", new { id = item.su_usuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.su_usuario })
+        </td>
+    </tr>
+}
+
+</table>

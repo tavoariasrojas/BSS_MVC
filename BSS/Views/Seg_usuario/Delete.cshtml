@@ -1,0 +1,88 @@
+﻿@model BSS.Models.Seg_usuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Seg_usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.su_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_nombre_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_nombre_completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_fecha_ingreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_fecha_ingreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_contrasena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_contrasena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_dias_vigencia_contrasena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_dias_vigencia_contrasena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_ultimo_cambio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_ultimo_cambio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.su_usu_insercion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.su_usu_insercion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

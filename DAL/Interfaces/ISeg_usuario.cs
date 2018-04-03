@@ -10,5 +10,6 @@ namespace DAL.Interfaces
         void InsertarSegUsuario(Seg_usuario seg_usuario);
         void ActualizarSegUsuario(Seg_usuario seg_usuario);
         void EliminarSegUsuario(string su_usuario);
+        bool ValidaSegUsuario(string su_usuario, string contrasena);
     }
 }
