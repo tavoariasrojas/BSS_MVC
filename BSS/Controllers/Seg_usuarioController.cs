@@ -44,7 +44,7 @@ namespace BSS.Controllers
                 var usuario = usu.BuscarSegUsuario(id);
                 if (usuario.su_contrasena.Equals(contra))
                 {
-                    return RedirectToAction("About", "Home");
+                    return RedirectToAction("Index", "Seg_usuario");
 
                 }
                 else
