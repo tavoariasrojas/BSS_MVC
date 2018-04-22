@@ -22,10 +22,20 @@ namespace BSS.Controllers
         {
             try
             {
-                var listaSegUsuarios = usu.ListarSegUsuarios();
-                var usuarios = Mapper.Map<List<Models.Seg_usuario>>(listaSegUsuarios);
-                ViewBag.Cantidad = usuarios.Count;
-                return View(usuarios);
+                var login = Session["login"];
+
+                if (Convert.ToBoolean(login))
+                {
+                    var listaSegUsuarios = usu.ListarSegUsuarios();
+                    var usuarios = Mapper.Map<List<Models.Seg_usuario>>(listaSegUsuarios);
+                    ViewBag.Cantidad = usuarios.Count;
+                    return View(usuarios);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -41,15 +51,29 @@ namespace BSS.Controllers
                 string message = string.Empty;
                 string id = Request.Form["txtUsername"].ToString();
                 string contra = Request.Form["txtContrasenna"].ToString();
-                var usuario = usu.BuscarSegUsuario(id);
-                if (usuario.su_contrasena.Equals(contra))
+                if (id == string.Empty)
                 {
-                    return RedirectToAction("Index", "Seg_usuario");
-
+                    ViewBag.Mensage = "Se requiere nombre de usuario";
+                    return View();
+                }
+                else if (contra == string.Empty)
+                {
+                    ViewBag.Mensage = "Se requiere contraseña";
+                    return View();
                 }
                 else
                 {
-                    return View();
+                    var usuario = usu.BuscarSegUsuario(id);
+                    if (usuario.su_contrasena.Equals(contra))
+                    {
+                        Session["login"] = true;
+                        return RedirectToAction("Index", "Seg_usuario");
+
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
             }
             catch (Exception ex)
@@ -81,6 +105,12 @@ namespace BSS.Controllers
             var usuario = usu.BuscarSegUsuario(id);
             var usuarioMostrar = Mapper.Map<Models.Seg_usuario>(usuario);
             return View(usuarioMostrar);
+        }
+
+        public ActionResult Logout()
+        {
+            Session["login"] = false;
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Edit(string id)

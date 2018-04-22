@@ -1,43 +1,78 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Login";
 }
 
-<h2>login</h2>
-@using (Html.BeginForm("Login", "Seg_usuario", FormMethod.Post))
-{
-    //this is  create Form tag
-    //@Html.AntiForgeryToken() // this is  prevent CSRF attack
-        @Html.ValidationSummary(true)
-    if (@ViewBag.Message != null)
-    {
-        <div style="border:1px solid red">
-            @ViewBag.Message
-        </div>
+<style type="text/css">
+    .bs-example {
+        height: 220px;
     }
-    <table>
-        <tr>
-            <td>@Html.Label("lbUsername")</td>
-            <td>@Html.TextBox("txtUsername")</td>
-            <td>@Html.ValidationMessage("message")</td>
-        </tr>
-        <tr>
-            <td>
-                @Html.Label("lbContrasenna")
-            </td>
-            <td>
-                @Html.Password("txtContrasenna")
-            </td>
-            <td>
-                @Html.ValidationMessage("validationMessage")
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login" />
-                @*<button type="button" onclick="location.href='@Url.Action("Edit", new { })'" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Editar</button>*@
-            </td>
-            <td></td>
-        </tr>
-    </table>
-}
+
+    .centerlook {
+        padding-left: 400px;
+        font-weight: bold;
+        width: 1000px;
+    }
+
+    .error {
+        padding-left: 400px;
+        font-weight: bold;
+        width: 1000px;
+        color: red;
+    }
+
+    .loginbtn {
+        padding-left: 500px;
+    }
+</style>
+ 
+<div class="">
+    <div class="bs-example">
+        <div class="form-group centerlook">
+            <h1> Login </h1>
+        </div>  
+        @using (Html.BeginForm("Login", "Seg_usuario", FormMethod.Post))
+        {
+            //this is  create Form tag
+            // this is  prevent CSRF attack
+            @Html.AntiForgeryToken() 
+            @Html.ValidationSummary(true)
+            if (@ViewBag.Message != null)
+            {
+                <div style="border:1px solid red">
+                    @ViewBag.Message
+                </div>
+            }
+            <div class="jumbotron">
+                <div class="form-group centerlook">
+                    <table>
+                        <tr>
+                            <td>@Html.Label("Username:")</td>
+                            <td>@Html.TextBox("txtUsername")</td>
+                            <td>@Html.ValidationMessage("message")</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Contraseña:")
+                            </td>
+                            <td>
+                                @Html.Password("txtContrasenna")
+                            </td>
+                            <td>
+                                @Html.ValidationMessage("validationMessage")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                @*@Html.b*@
+                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login" />
+                                @*<button type="button" onclick="location.href='@Url.Action("Edit", new { })'" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Editar</button>*@
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>
